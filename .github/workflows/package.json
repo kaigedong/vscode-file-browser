@@ -1,17 +1,17 @@
 {
-  "name": "file-browser",
+  "name": "file-browser2",
   "publisher": "bodil",
   "displayName": "File Browser",
   "description": "A nicer alternative to the file open dialog.",
   "version": "0.2.10",
   "license": "LGPL-3.0+",
   "author": {
-    "name": "Bodil Stokke",
-    "url": "https://bodil.lol/"
+    "name": "kaigedong",
+    "url": "https://github.com/kaigedong"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bodil/vscode-file-browser"
+    "url": "https://github.com/kaigedong/vscode-file-browser"
   },
   "keywords": [
     "emacs",
@@ -25,7 +25,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:file-browser.open"
+    "onCommand:file-browser2.open"
   ],
   "main": "./out/extension.js",
   "extensionKind": [
@@ -36,27 +36,27 @@
     "configuration": {
       "title": "File Browser",
       "properties": {
-        "file-browser.removeIgnoredFiles": {
-          "markdownDescription": "Never show or match files that are hidden when matching by either `#file-browser.hideIgnoredFiles#` or `#file-browser.hideDotfiles#`.",
+        "file-browser2.removeIgnoredFiles": {
+          "markdownDescription": "Never show or match files that are hidden when matching by either `#file-browser2.hideIgnoredFiles#` or `#file-browser2.hideDotfiles#`.",
           "type": "boolean",
           "default": false
         },
-        "file-browser.hideDotfiles": {
+        "file-browser2.hideDotfiles": {
           "markdownDescription": "When filtering by name, hide unmatched dotfiles (files whose names start with `.`).",
           "type": "boolean",
           "default": true
         },
-        "file-browser.hideIgnoredFiles": {
-          "markdownDescription": "When filtering by name, hide unmatched files according to rules in `.gitignore` style files, as defined in `#file-browser.ignoreFileTypes#`.",
+        "file-browser2.hideIgnoredFiles": {
+          "markdownDescription": "When filtering by name, hide unmatched files according to rules in `.gitignore` style files, as defined in `#file-browser2.ignoreFileTypes#`.",
           "type": "boolean",
           "default": false
         },
-        "file-browser.labelIgnoredFiles": {
+        "file-browser2.labelIgnoredFiles": {
           "markdownDescription": "Label files hidden by a `.gitignore` file as such.",
           "type": "boolean",
           "default": false
         },
-        "file-browser.ignoreFileTypes": {
+        "file-browser2.ignoreFileTypes": {
           "markdownDescription": "A list of `.gitignore` style files to look for and hide files accordingly when browsing. The extension will obey only the first file it finds from this list, searching upwards from the current directory, so make sure the order is as you like it.",
           "type": "array",
           "items": {
@@ -72,46 +72,46 @@
     },
     "commands": [
       {
-        "command": "file-browser.open",
+        "command": "file-browser2.open",
         "title": "File Browser: Open"
       },
       {
-        "command": "file-browser.stepIn",
+        "command": "file-browser2.stepIn",
         "title": "File Browser: Step In"
       },
       {
-        "command": "file-browser.stepOut",
+        "command": "file-browser2.stepOut",
         "title": "File Browser: Step Out"
       },
       {
-        "command": "file-browser.actions",
+        "command": "file-browser2.actions",
         "title": "File Browser: Actions"
       }
     ],
     "keybindings": [
       {
         "key": "right",
-        "command": "file-browser.stepIn",
+        "command": "file-browser2.stepIn",
         "when": "inFileBrowser"
       },
       {
         "key": "left",
-        "command": "file-browser.stepOut",
+        "command": "file-browser2.stepOut",
         "when": "inFileBrowser"
       },
       {
         "key": "ctrl+a",
-        "command": "file-browser.actions",
+        "command": "file-browser2.actions",
         "when": "inFileBrowser"
       },
       {
         "key": "tab",
-        "command": "file-browser.tabNext",
+        "command": "file-browser2.tabNext",
         "when": "inFileBrowser"
       },
       {
         "key": "shift+tab",
-        "command": "file-browser.tabPrev",
+        "command": "file-browser2.tabPrev",
         "when": "inFileBrowser"
       }
     ]

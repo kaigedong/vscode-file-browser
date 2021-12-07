@@ -18,7 +18,7 @@ export enum ConfigItem {
 }
 
 export function config<A>(item: ConfigItem): A | undefined {
-    return vscode.workspace.getConfiguration("file-browser").get(item);
+    return vscode.workspace.getConfiguration("file-browser2").get(item);
 }
 
 let active: Option<FileBrowser> = None;
@@ -425,7 +425,7 @@ export function activate(context: vscode.ExtensionContext) {
     setContext(false);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.open", () => {
+        vscode.commands.registerCommand("file-browser2.open", () => {
             const document = vscode.window.activeTextEditor?.document;
             let workspaceFolder =
                 vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders[0];
@@ -441,27 +441,27 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.stepIn", () =>
+        vscode.commands.registerCommand("file-browser2.stepIn", () =>
             active.ifSome((active) => active.stepIn())
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.stepOut", () =>
+        vscode.commands.registerCommand("file-browser2.stepOut", () =>
             active.ifSome((active) => active.stepOut())
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.actions", () =>
+        vscode.commands.registerCommand("file-browser2.actions", () =>
             active.ifSome((active) => active.actions())
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.tabNext", () =>
+        vscode.commands.registerCommand("file-browser2.tabNext", () =>
             active.ifSome((active) => active.tabCompletion(true))
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.tabPrev", () =>
+        vscode.commands.registerCommand("file-browser2.tabPrev", () =>
             active.ifSome((active) => active.tabCompletion(false))
         )
     );
