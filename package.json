@@ -1,5 +1,9 @@
 {
   "name": "file-browser2",
+  "author": {
+    "name": "kaigedong"
+  },
+  "publisher": "kaigedong",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.45.0"
