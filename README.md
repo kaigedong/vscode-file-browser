@@ -1,5 +1,14 @@
 # File Browser
 
+TODO:
+
+- [x] 输入..自动到上一层目录
+- [ ] 路径显示为相对路径，而非绝对路径
+- [x] CTRL + W 退一个单词: 设置快捷键即可
+- [ ] 匹配字体红色高亮红色
+- [ ] 不显示 Open as a new file(Array 模糊匹配问题)
+- [ ] 修复 tab 键匹配时，填充两次文件夹的问题
+
 An integrated, keyboard driven file selector for VS Code, inspired by Emacs's
 [Helm](https://emacs-helm.github.io/helm/) file selector.
 

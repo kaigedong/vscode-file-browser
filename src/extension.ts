@@ -51,15 +51,15 @@ class FileBrowser {
 
   actionsButton: QuickInputButton = {
     iconPath: new ThemeIcon("ellipsis"),
-    tooltip: "Actions on selected file",
+    tooltip: "选项",
   };
   stepOutButton: QuickInputButton = {
     iconPath: new ThemeIcon("arrow-left"),
-    tooltip: "Step out of folder",
+    tooltip: "上一层文件夹",
   };
   stepInButton: QuickInputButton = {
     iconPath: new ThemeIcon("arrow-right"),
-    tooltip: "Step into folder",
+    tooltip: "进入文件夹",
   };
 
   constructor(path: Path, file: Option<string>) {
@@ -81,9 +81,11 @@ class FileBrowser {
     this.current.onDidAccept(this.onDidAccept.bind(this));
     this.current.onDidChangeValue(this.onDidChangeValue.bind(this));
     this.current.onDidTriggerButton(this.onDidTriggerButton.bind(this));
+
+    // TODO: 显示当前相对路径
     this.update().then(() => {
       this.current.placeholder =
-        "Type a file name here to search or open a new file";
+        "输入文件名来进行搜索或打开新文件";
       this.current.busy = false;
     });
   }
@@ -200,11 +202,12 @@ class FileBrowser {
           }
         },
         () => {
+          // TODO: 模糊匹配
           const newItem = {
             label: `$(new-file) ${value}`,
             name: value,
             description: "Open as new file",
-            alwaysShow: true,
+            alwaysShow: false,
             action: Action.NewFile,
           };
           this.current.items = [newItem, ...this.items];
@@ -283,6 +286,7 @@ class FileBrowser {
     );
   }
 
+  // FIXME
   tabCompletion(tabNext: boolean) {
     if (this.inActions) {
       return;

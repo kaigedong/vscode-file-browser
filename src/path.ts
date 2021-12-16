@@ -146,7 +146,9 @@ export class Path {
  * Otherwise, return [[None]].
  */
 export function endsWithPathSeparator(value: string): Option<string> {
-  if (value.endsWith("/")) {
+  // if (value.endsWith("/")) {
+  if (value.endsWith("..")) {
+    value = value + "/";
     return Some(value.slice(0, value.length - 1));
   }
   if (value.endsWith(OSPath.sep)) {
