@@ -84,8 +84,7 @@ class FileBrowser {
 
     // TODO: 显示当前相对路径
     this.update().then(() => {
-      this.current.placeholder =
-        "输入文件名来进行搜索或打开新文件";
+      this.current.placeholder = "输入文件名来进行搜索或打开新文件";
       this.current.busy = false;
     });
   }
@@ -183,7 +182,7 @@ class FileBrowser {
       this.autoCompletion = undefined;
     }
 
-    const existingItem = this.items.find((item) => item.name === value);
+    const existingItem = this.items.find((item) => item.name.includes(value));
     if (value === "") {
       this.current.items = this.items;
       this.current.activeItems = [];
@@ -202,7 +201,6 @@ class FileBrowser {
           }
         },
         () => {
-          // TODO: 模糊匹配
           const newItem = {
             label: `$(new-file) ${value}`,
             name: value,
