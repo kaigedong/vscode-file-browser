@@ -90,12 +90,17 @@
     ],
     "keybindings": [
       {
-        "key": "right",
+        "key": "ctrl+w",
+        "command": "file-browser2.stepOut",
+        "when": "inFileBrowser"
+      },
+      {
+        "key": "ctrl+l",
         "command": "file-browser2.stepIn",
         "when": "inFileBrowser"
       },
       {
-        "key": "left",
+        "key": "ctrl+h",
         "command": "file-browser2.stepOut",
         "when": "inFileBrowser"
       },
