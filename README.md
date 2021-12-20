@@ -7,7 +7,7 @@ TODO:
 - [x] CTRL + W 退一个单词: 设置快捷键即可: CTRL + W 到上层目录
 - [ ] 匹配字体红色高亮红色
 - [x] 不显示 Open as a new file(Array 模糊匹配问题)
-- [ ] 修复 tab 键匹配时，如果为文件夹时，填充两次文件夹的问题
+- [x] 修复 tab 键匹配时，如果为文件夹时，填充两次文件夹的问题
 
 An integrated, keyboard driven file selector for VS Code, inspired by Emacs's
 [Helm](https://emacs-helm.github.io/helm/) file selector.
