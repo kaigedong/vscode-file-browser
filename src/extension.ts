@@ -284,7 +284,6 @@ class FileBrowser {
     );
   }
 
-  // FIXME
   tabCompletion(tabNext: boolean) {
     if (this.inActions) {
       return;

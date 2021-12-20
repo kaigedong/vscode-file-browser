@@ -151,6 +151,9 @@ export function endsWithPathSeparator(value: string): Option<string> {
     value = value + "/";
     return Some(value.slice(0, value.length - 1));
   }
+  if (value.endsWith("/")) {
+    return Some(value.slice(0, value.length - 1));
+  }
   if (value.endsWith(OSPath.sep)) {
     return Some(value.slice(0, value.length - OSPath.sep.length));
   }

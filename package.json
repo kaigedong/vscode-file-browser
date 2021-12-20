@@ -95,7 +95,7 @@
         "when": "inFileBrowser"
       },
       {
-        "key": "ctrl+l",
+        "key": "tab",
         "command": "file-browser2.stepIn",
         "when": "inFileBrowser"
       },
@@ -107,11 +107,6 @@
       {
         "key": "ctrl+a",
         "command": "file-browser2.actions",
-        "when": "inFileBrowser"
-      },
-      {
-        "key": "tab",
-        "command": "file-browser2.tabNext",
         "when": "inFileBrowser"
       },
       {
