@@ -1,3 +1,5 @@
+name: '编译检测bot'
+
 on:
   push:
     # push 到main分支时触发
@@ -11,18 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 从仓库获取代码
-    - name: 'Checkout codes'
-    uses: actions/checkout@v1
+      # 从仓库获取代码
+      - name: 'Checkout codes'
+        uses: actions/checkout@v1
 
-    - name: Setup Node.js
-    uses: actions/setup-node@v1
-    with:
-    # 选择要使用的 node 版本
-    node-version: '14.18.3'
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          # 选择要使用的 node 版本
+          node-version: '14.18.3'
 
-    - name: '安装IPTV filter'
-    run: npm install -g vsce && npm install -g typescript
+      - name: '安装IPTV filter'
+        run: npm install -g vsce && npm install -g typescript
 
-    - name: 测试编译
-    run: vsce package
+      - name: 测试编译
+        run: vsce package
